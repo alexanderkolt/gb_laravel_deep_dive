@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\Admin\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/',[HomeController::class, 'index']);
+
+Route::get('/admin',[App\Http\Controllers\Admin\IndexController::class, 'index']);
